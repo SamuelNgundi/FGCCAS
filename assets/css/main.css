@@ -740,6 +740,10 @@ section {
 .clients {
   padding: 40px 0;
 }
+.partner{
+  display: flex;
+  justify-content: center;
+}
 
 .clients .swiper {
   padding: 10px 0;
