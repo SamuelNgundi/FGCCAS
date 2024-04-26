@@ -276,6 +276,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
+  // Sroll function for members
+
+  const teamMemberImages = document.querySelectorAll('.member img');
+  const container = document.getElementById('team-members-container');
+  teamMemberImages.forEach(image => {
+    image.addEventListener('click', () => {
+      const scrollAmount = image.parentNode.offsetLeft - (container.offsetWidth - image.parentNode.offsetWidth) / 2;
+      container.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+  });
+
   /**
    * Animation on scroll function and init
    */
