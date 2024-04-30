@@ -2905,67 +2905,46 @@ section {
   color: #fff;
 }
 
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+#gallery {
+  padding: 60px;
+  overflow: hidden;
 }
 
-fieldset {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
+#gallery .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
 }
 
-legend {
-  font-size: 1.2em;
-  font-weight: bold;
+#gallery .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #008374;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 600;
+#gallery .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-primary);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="date"],
-input[type="file"],
-textarea,
-select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#gallery .swiper-slide-active {
+  text-align: center;
 }
 
-input[type="submit"] {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+@media (min-width: 992px) {
+  #gallery .swiper-wrapper {
+    padding: 40px 0;
+  }
 
-input[type="submit"]:hover {
-  background-color: #0056b3;
+  #gallery .swiper-slide-active {
+    border: 5px solid #008374;
+    padding: 4px;
+    background: #fff;
+    z-index: 1;
+    transform: scale(1.15);
+    margin-top: 6px;
+  }
 }
-
-input[type="checkbox"],
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-textarea {
-  height: 100px;
-}
-
-/* Customize further as needed */
