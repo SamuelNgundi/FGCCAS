@@ -2917,6 +2917,10 @@ section {
   margin-top: 20px;
   position: relative;
 }
+.gallery-slider {
+  width: 200; /* Adjust width as needed */
+  height: 200; /* Adjust height as needed */
+}
 
 #gallery .swiper-pagination .swiper-pagination-bullet {
   width: 12px;

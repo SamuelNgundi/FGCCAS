@@ -1,9 +1,9 @@
 /**
 * Template Name: Impact
-* Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+* Template URL: https:
 * Updated: Apr 4 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* License: https:
 */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  // Sroll function for members
+  
 
   const teamMemberImages = document.querySelectorAll('.member img');
   const container = document.getElementById('team-members-container');
