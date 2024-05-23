@@ -1,11 +1,3 @@
-/**
-* Template Name: Impact
-* Template URL: https:
-* Updated: Apr 4 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https:
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
