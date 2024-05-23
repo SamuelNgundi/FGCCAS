@@ -1739,11 +1739,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid var(--color-tertiary);
+  border: 1px solid var(--color-primary);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-primary);
 }
 
 .testimonials .swiper-slide {
