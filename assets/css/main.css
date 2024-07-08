@@ -2119,6 +2119,10 @@ section {
   font-family: var(--font-primary);
 }
 
+.social-links {
+  justify-content: center; /* Center the icons horizontally */
+}
+
 .footer .social-links a {
   display: flex;
   align-items: center;
@@ -2127,7 +2131,7 @@ section {
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 16px;
+  font-size: 30px;
   color: rgba(255, 255, 255, 0.7);
   margin-right: 10px;
   transition: 0.3s;
@@ -2194,7 +2198,7 @@ section {
 .footer .credits {
   padding-top: 4px;
   text-align: center;
-  font-size: 13px;
+  font-size: 6px;
 }
 
 .footer .credits a {
@@ -2238,6 +2242,11 @@ section {
 
 #gallery .swiper-slide-active {
   text-align: center;
+}
+
+.view-more-container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 20px; /* Optional: Add some space above the button */
 }
 
 @media (min-width: 992px) {
