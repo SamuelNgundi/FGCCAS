@@ -660,6 +660,24 @@ section {
   text-align: center;
 }
 
+.video-box img[src="assets/img/About.jpg"] {
+  position: relative;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.video-box img[src="assets/img/About.jpg"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Adjust width for the fade effect */
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+  pointer-events: none;
+}
+
 .about .call-us h4 {
   font-size: 24px;
   font-weight: 700;
