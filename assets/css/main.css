@@ -317,21 +317,7 @@ section {
   margin-top: 70px;
 }
 
-.donate-link {
-  display: inline-block; /* Make the link a block-level element for styling */
-  padding: 10px 90px; /* Adjust the padding for space inside the box */
-  border: 2px solid #008374; /* Border color */
-   color: white;
-  background-color: #008374; /* Background color */
-  text-align: center; /* Center the text inside */
-  text-decoration: none; /* Remove underline from link */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effect */
-}
 
-.donate-link:hover {
-  background-color: #0056b3; /* Change background color on hover */
-  border-color: #0056b3; /* Change border color on hover */
-}
 /*--------------------------------------------------------------
 # Desktop Navigation
 --------------------------------------------------------------*/
