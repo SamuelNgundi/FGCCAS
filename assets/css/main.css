@@ -619,7 +619,7 @@ section {
 
 .titleh {
   position: absolute;
-  bottom: 0px; /* Adjust as needed */
+  bottom: 180px; /* Adjust as needed */
   left: 0;
   width: 100%;
   text-align: center;
