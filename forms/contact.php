@@ -3,7 +3,7 @@
 // CONFIGURATION
 // -------------------------------
 $receiving_email_address = 'fogccasociety@gmail.com'; // Recipient email
-$recaptcha_secret = "6LeyUKMrAAAAAJj2aL0vg4z1Nl2bjjwv-nlVfSN6"; // Google reCAPTCHA secret key
+$recaptcha_secret = "6Lf_UqMrAAAAAIT_R7DBbHcbNsorbj6w5lDGmEAB"; // Google reCAPTCHA secret key
 
 // -------------------------------
 // reCAPTCHA VALIDATION

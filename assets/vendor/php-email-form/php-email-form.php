@@ -3,7 +3,7 @@
 $receiving_email_address = 'fogccasociety@gmail.com';
 
 // reCAPTCHA secret key (from Google Admin Console)
-$recaptcha_secret = "6LeyUKMrAAAAAJj2aL0vg4z1Nl2bjjwv-nlVfSN6";
+$recaptcha_secret = "6Lf_UqMrAAAAAIT_R7DBbHcbNsorbj6w5lDGmEAB";
 
 // Validate reCAPTCHA
 if (!isset($_POST['g-recaptcha-response'])) {
