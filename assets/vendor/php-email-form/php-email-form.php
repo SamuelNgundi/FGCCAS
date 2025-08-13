@@ -1,46 +1,60 @@
 <?php
-// Email address to receive submissions
-$receiving_email_address = 'fogccasociety@gmail.com';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
 
-// reCAPTCHA secret key (from Google Admin Console)
-$recaptcha_secret = "6Lf_UqMrAAAAAIT_R7DBbHcbNsorbj6w5lDGmEAB";
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-// Validate reCAPTCHA
-if (!isset($_POST['g-recaptcha-response'])) {
-    die("Captcha not completed.");
+// Load environment variables
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+
+class PHP_Email_Form {
+    public $to;
+    public $from_name;
+    public $from_email;
+    public $subject;
+    public $message = '';
+    public $ajax = false;
+
+    public function add_message($content, $label = '', $line_break = 1) {
+        $this->message .= $label . ": " . $content;
+        for ($i = 0; $i < $line_break; $i++) {
+            $this->message .= "\n";
+        }
+    }
+
+    public function send() {
+        $mail = new PHPMailer(true);
+
+        try {
+            // SMTP settings
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $_ENV['GMAIL_USERNAME'];
+            $mail->Password   = $_ENV['GMAIL_PASSWORD'];
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            // Email headers
+            $mail->setFrom($this->from_email, $this->from_name);
+            $mail->addAddress($this->to);
+            $mail->addReplyTo($this->from_email, $this->from_name);
+
+            // Email content
+            $mail->isHTML(false);
+            $mail->Subject = $this->subject;
+            $mail->Body    = $this->message;
+
+            $mail->send();
+            return 'OK';
+        } catch (Exception $e) {
+            return 'Error: ' . $mail->ErrorInfo;
+        }
+    }
 }
-
-$recaptcha_response = $_POST['g-recaptcha-response'];
-$verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$recaptcha_response}");
-$response_data = json_decode($verify);
-
-if (!$response_data->success) {
-    die("Captcha verification failed. Please try again.");
+// === Honeypot anti-bot check ===
+if (!empty($_POST['hp_field'])) {
+    die("Error: Bot detected.");
 }
-
-// Include PHPMailer form handler
-if (file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php')) {
-    include($php_email_form);
-} else {
-    die('Unable to load the "PHP Email Form" Library!');
-}
-
-// Create email
-$contact = new PHP_Email_Form;
-$contact->ajax = true;
-$contact->to = $receiving_email_address;
-
-// IMPORTANT: Use your Gmail address as from_email to avoid SPF/DKIM issues
-$contact->from_name = $_POST['name'];
-$contact->from_email = 'fogccasociety@gmail.com'; // Always your Gmail address
-$contact->subject = $_POST['subject'];
-
-// Add reply-to separately (so replies go to the visitor)
-$visitor_email = $_POST['email'] ?? '';
-$contact->add_message($_POST['name'], 'From');
-$contact->add_message($visitor_email, 'Email');
-$contact->add_message($_POST['message'], 'Message', 10);
-
-// Send email
-echo $contact->send();
-?>
